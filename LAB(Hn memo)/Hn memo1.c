@@ -1,0 +1,32 @@
+int h_memo1(int n, int *m) {
+	int i, ret;
+	int a, b;
+	if(n == 1 || n == 0) 
+		return 1;
+
+	ret = 0;
+	for(i=0; i<n; i++) {
+		if(m[i] == 0) 
+			m[i] = h_memo1(i, m);
+
+		if(m[n-i-1] == 0) 
+			m[n-i-1] = h_memo1(n-i-1, m);
+
+		ret = ret + m[i] * m[n-i-1];
+	}
+	return ret;
+	
+}
+
+int main() {
+	int i;
+	int n = 19; 
+	int *m;
+
+	m = (int*) malloc(sizeof(int)*(n+1));
+	for(i=0; i<=n; i++)
+		m[i] = 0;
+	printf("%d\n",h_memo1(n,m));
+  
+	return 0;
+}
