@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 int h_memo1(int n, int *m) {
 	int i, ret;
 	int a, b;
