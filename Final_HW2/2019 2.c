@@ -1,3 +1,4 @@
+//기존 Hn memo 변형
 #include <stdio.h>
 #include <stdlib.h>
 
