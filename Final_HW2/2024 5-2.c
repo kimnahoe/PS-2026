@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//다시 풀어야 됨!!!!!!!!
 int start1(int n, int *M) {
 	int min=10000000;
 	int ret=0;
