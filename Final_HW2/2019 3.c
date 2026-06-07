@@ -5,6 +5,7 @@ int start1(int n, int *M) {
 	int min=10000000;
 	int ret=0;
 	
+	
 	if(M[n] != 0)
 		return M[n];
 		
@@ -14,22 +15,23 @@ int start1(int n, int *M) {
 	}
 	else {
 		//printf("%d ", n);
+		
 		if(n%3==0) {
 			ret = start1(n/3, M) + 1;
 			if(ret<min)
 				min=ret;
 		}
-		else if(n%2==0) {
+		if(n%2==0) {
 			ret = start1(n/2, M) + 1;
 			if(ret<min)
 				min=ret;
 		}
-		else {
-			ret = start1(n-1, M) + 1;
-			if(ret<min)
-				min=ret;
-		}
-		M[n] = ret;
+		ret = start1(n-1, M) + 1;
+		if(ret<min)
+			min=ret;
+			
+		M[n] = min;
+		
 		return min;
 	}
 }
