@@ -40,7 +40,6 @@ int main(void)
 	scanf("%d", &n);
 	scanf("%d", &k);
 	
-	int check[2]={0,1};
 	int *bucket=(int*)malloc(sizeof(int)*n);
 	int *arr=(int*)malloc(sizeof(int)*n);
 	
