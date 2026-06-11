@@ -60,7 +60,7 @@ int main() {
 
 	for(i=0; i<N; i++) {
 		scanf("%d", &arr[i]);
-		min_k = (min_k>arr[i])?arr[i]:min_k;
+		min_k = (min_k>arr[i])?arr[i]:min_k; //bucket의 최대크기를 만들어 주는 과정
 	}
 	bucket = (int*)malloc(sizeof(int)*(K/min_k));
 
