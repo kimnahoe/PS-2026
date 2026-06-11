@@ -6,7 +6,7 @@ void pick(int itemSize, int* bucket, int bucketSize, int k)
 	int i, lastIndex, smallest;
 	if (k == 0) {
 		for (i = 0; i < bucketSize; i++)
-			printf("%d ", bucket[i] + 1); //뽑은 bucket에 +1을 해주면 된다. bucket은 순서니까
+			printf("%d ", bucket[i] + 1); //뽑은 bucket에 +1을 해주면 된다. bucket은 선택한 아이템들의 인덱스 저장
 		printf("\n");
 		return;
 	}
