@@ -6,7 +6,7 @@ void pick(int n, int *bucket, int m, int toPick) {
 
 	if(toPick == 0) {
 		for(i=0; i<m; i++) {
-			printf("%d(%c) ", bucket[i]+1, 'A'+i);
+			printf("%d(%c) ", bucket[i]+1, 'A'+i); //인덱스+1 해서 1~5 만들 수 있게 함
 		}
 		printf("\n");
 		return;
@@ -34,7 +34,7 @@ int main() {
 	int N, i;
 	int bucket[5];
 
-	pick(5, bucket, 5, 5);
+	pick(5, bucket, 5, 5); //1~5까지 있으니까 따로 item을 만들지 않음
 
 	return 0;
 }
