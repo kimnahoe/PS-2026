@@ -11,7 +11,7 @@ int pick(int *item, int itemSize, int* bucket, int bucketSize, int k, int total)
 			//printf("%d ", item[bucket[i]]);
 			sum += item[bucket[i]];
 		}
-		return total-sum-sum;
+		return total - sum > sum ? (total - sum - sum) : ( sum + sum - total);
 	}
 	
 	lastIndex = bucketSize - k - 1; // 가장 최근에 뽑힌 수가 저장된 위치 index
