@@ -11,7 +11,7 @@ int pick(int *item, int itemSize, int* bucket, int bucketSize, int k, int total)
 			//printf("%d ", item[bucket[i]]);
 			sum += item[bucket[i]];
 		}
-		if(sum+sum > total)
+		if(sum+sum > total) //음수 나오는 경우 방지 60 150인 경우, 150 60인 경우
 			return sum+sum-total;
 		//printf(": %d\n", sum);
 		else
