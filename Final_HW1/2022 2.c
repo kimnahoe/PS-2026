@@ -11,11 +11,7 @@ int pick(int *item, int itemSize, int* bucket, int bucketSize, int k, int total)
 			//printf("%d ", item[bucket[i]]);
 			sum += item[bucket[i]];
 		}
-		if(sum+sum > total) //음수 나오는 경우 방지 60 150인 경우, 150 60인 경우
-			return sum+sum-total;
-		//printf(": %d\n", sum);
-		else
-			return total-sum-sum;
+		return total-sum-sum;
 	}
 	
 	lastIndex = bucketSize - k - 1; // 가장 최근에 뽑힌 수가 저장된 위치 index
@@ -50,8 +46,10 @@ int main() {
 		scanf("%d", &arr[i]);
 		sum += arr[i];
 	}
-		
-	printf("%d", pick(arr, n, bucket, n/2, n/2, sum));
+	
+	bucket[0]=0;	
+	printf("%d", pick(arr, n, bucket, n/2-1, n/2-1, sum)); //불필요한 계산 할 필요X 첫 번째 수와 그게 안나왔을 때랑 비교하면 똑같음
+	//60 90, 90 60 둘 다 return 값이 같은데 굳이 2번 계산 할 필요X
 
 	free(bucket);
 	free(arr);
