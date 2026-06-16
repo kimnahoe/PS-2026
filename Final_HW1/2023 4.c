@@ -1,22 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 void arrArr(char a[]) 
-{ 
- int i, j, max, maxIndex = 0, temp; 
- for (i = 0; a[i] != '\0'; i++) { 
-  max = a[i]; 
-  maxIndex = i; 
-  for (j = i + 1; a[j] != '\0'; j++) { 
-   if (a[j] > max) { 
-    max = a[j]; 
-    maxIndex = j; 
-   } 
-  } 
-  temp = a[i]; 
-  a[i] = a[maxIndex]; 
-  a[maxIndex] = temp; 
- } 
+{
+	int i, j, min, minIndex = 0, temp; 
+	for (i = 0; a[i] != '\0'; i++) { 
+		min = a[i]; 
+		minIndex = i; 
+	for (j = i + 1; a[j] != '\0'; j++) { 
+		if (a[j] < min) { 
+			min = a[j]; 
+			minIndex = j; 
+		} 
+	}
+	temp = a[i]; 
+	a[i] = a[minIndex]; 
+	a[minIndex] = temp;
+	}
 } 
+
 void stringArr(char *str)
 {
 	char *s1=(char*)malloc(sizeof(char)*500000);
