@@ -52,7 +52,7 @@ int main() {
 	bp = (int*)malloc(sizeof(int)*(n+1));
 
 	for(i=0; i<=n; i++) {
-    	M[i] = 0;
+    	M[i] = -1;
     	bp[i] = 0;
     }
 
