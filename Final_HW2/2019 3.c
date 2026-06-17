@@ -45,7 +45,7 @@ int main() {
 	M = (int*)malloc(sizeof(int)*(n+1));
 
 	for(i=0; i<=n; i++)
-    	M[i] = 0;
+    	M[i] = -1;
 
 	printf("%d", start1(n, M));
 
