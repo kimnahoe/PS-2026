@@ -13,6 +13,13 @@ int pick(int itemSize, int* bucket, int bucketSize, int k, int key)
 				count++;
 		return count>=key?1:0;
 	}
+	
+	for (i = 0; i < bucketSize; i++) // 1 3 뽑은 경우 2개 짝수 뽑아야 하는데 더이상 뽑을 수 X
+		if((bucket[i]+1)%2 == 0)
+			count++;
+	if(count+k < key) //가지치기
+		return 0;
+	
 	lastIndex = bucketSize - k - 1;
 
 	if (bucketSize == k)
